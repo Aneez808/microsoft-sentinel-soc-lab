@@ -1,0 +1,5 @@
+Event
+| where EventLog == "Security"
+| where EventID == 4625
+| sort by TimeGenerated desc
+| take 20
