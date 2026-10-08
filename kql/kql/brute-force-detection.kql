@@ -1,0 +1,5 @@
+Event
+| where EventLog == "Security"
+| where EventID == 4625
+| summarize FailedAttempts = count() by Computer, bin(TimeGenerated, 5m)
+| where FailedAttempts >= 5
